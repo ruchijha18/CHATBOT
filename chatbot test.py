@@ -24,5 +24,10 @@ def find_candidate_parts_of_speech(parsed):
     noun = None
     adjective = None
     verb = None
-
+    for sent in parsed.sentences:
+        pronoun = find_pronoun(sent)
+        noun = find_noun(sent)
+        adjective = find_adjective(sent)
+        verb = find_verb(sent)
+    logger.info("Pronoun=%s, noun=%s, adjective=%s, verb=%s", pronoun, noun, adjective, verb)
     return pronoun, noun, adjective, verb
